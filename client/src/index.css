@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  /* Hospital Theme Colors */
+  --color-sidebar: #1B2430;
+  --color-canvas: #F6F5F2;
+  --color-primary: #3D7068;
+  --color-primary-hover: #2c524c;
+  --color-stable: #3B7A4E;
+  --color-critical: #B23A3A;
+  
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: var(--color-canvas);
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
