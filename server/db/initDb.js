@@ -11,16 +11,16 @@ async function initDb() {
     
     // Connect without database selected first
     const connection = await mysql.createConnection({
-      host: process.env.DB_HOST || 'localhost',
-      user: process.env.DB_USER || 'root',
-      password: process.env.DB_PASSWORD || '1234',
-      port: parseInt(process.env.DB_PORT || '3306')
+      host: process.env.MYSQLHOST || process.env.DB_HOST || 'localhost',
+      user: process.env.MYSQLUSER || process.env.DB_USER || 'root',
+      password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD || '1234',
+      port: parseInt(process.env.MYSQLPORT || process.env.DB_PORT || '3306')
     });
 
     console.log('Connected to MySQL server.');
 
     // Create database
-    const dbName = process.env.DB_NAME || 'hospital_mis';
+    const dbName = process.env.MYSQLDATABASE || process.env.DB_NAME || 'hospital_mis';
     await connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName}`);
     console.log(`Database "${dbName}" checked/created.`);
 

@@ -57,10 +57,12 @@ app.use((err, req, res, next) => {
 });
 
 const { testConnection } = require('./config/db');
+const initializeAndSeedDatabase = require('./config/dbInitializer');
 
 // Start server
 const server = app.listen(PORT, async () => {
   console.log(`Server is running on port ${PORT}`);
+  await initializeAndSeedDatabase();
   await testConnection();
 });
 
