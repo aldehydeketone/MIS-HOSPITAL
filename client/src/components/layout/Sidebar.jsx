@@ -74,26 +74,26 @@ export default function Sidebar() {
   return (
     <aside
       id="sidebar"
-      className="flex flex-col fixed left-0 top-0 h-full w-64 z-40 select-none shadow-xl"
+      className="flex flex-col fixed left-0 top-0 h-full w-64 z-40 select-none border-r border-gray-200 shadow-sm"
       style={{ backgroundColor: 'var(--color-sidebar)' }}
     >
       {/* Brand */}
-      <div className="px-6 py-6 border-b border-white/10">
+      <div className="px-6 py-6 border-b border-gray-100">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'var(--color-primary)' }}>
             <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
               <path d="M7 1v12M1 7h12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
             </svg>
           </div>
-          <span className="text-white font-semibold text-lg tracking-wide">
+          <span className="text-gray-900 font-semibold text-lg tracking-wide">
             Hospital MIS
           </span>
         </div>
-
+ 
         {/* User info */}
-        <div className="bg-white/5 rounded-xl px-4 py-3 border border-white/10">
-          <p className="text-white text-sm font-medium truncate">{user.name}</p>
-          <p className="text-white/60 text-xs mt-1 truncate">{user.email}</p>
+        <div className="bg-gray-50 rounded-xl px-4 py-3 border border-gray-200">
+          <p className="text-gray-800 text-sm font-medium truncate">{user.name}</p>
+          <p className="text-gray-500 text-xs mt-1 truncate">{user.email}</p>
           <span
             className="inline-block mt-2 text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-full uppercase"
             style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}
@@ -102,7 +102,7 @@ export default function Sidebar() {
           </span>
         </div>
       </div>
-
+ 
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto px-4 py-6">
         <ul className="space-y-1.5">
@@ -113,10 +113,11 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all duration-200 ${
                     isActive
-                      ? 'bg-white/10 text-white font-medium shadow-sm'
-                      : 'text-white/60 hover:text-white hover:bg-white/5'
+                      ? 'text-white font-medium shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`
                 }
+                style={({ isActive }) => isActive ? { backgroundColor: 'var(--color-primary)' } : {}}
               >
                 <span className="flex-shrink-0">{icons[item.icon]}</span>
                 {item.label}
@@ -125,13 +126,13 @@ export default function Sidebar() {
           ))}
         </ul>
       </nav>
-
+ 
       {/* Logout */}
-      <div className="px-4 py-6 border-t border-white/10">
+      <div className="px-4 py-6 border-t border-gray-100">
         <button
           onClick={handleLogout}
           id="btn-logout"
-          className="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-sm text-white/60 hover:text-red-400 hover:bg-red-400/10 transition-colors"
+          className="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 transition-colors"
         >
           <span>{icons.logout}</span>
           Sign Out
