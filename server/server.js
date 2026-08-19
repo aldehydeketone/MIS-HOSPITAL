@@ -38,10 +38,14 @@ app.use('/api/medical-records', recordRoutes);
 app.use('/api/logs', logRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
-// 404 Route handler
-app.use((req, res, next) => {
-  res.status(404).json({ message: 'Resource not found' });
+// --- Serve React Frontend ---
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
+// ----------------------------
 
 // Global Error Handler
 app.use((err, req, res, next) => {
