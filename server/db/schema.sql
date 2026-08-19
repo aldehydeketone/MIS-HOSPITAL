@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS hospital_mis;
-USE hospital_mis;
-
 -- 1. Users Table
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
