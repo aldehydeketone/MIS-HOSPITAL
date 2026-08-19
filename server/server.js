@@ -29,10 +29,12 @@ const appointmentRoutes = require('./routes/appointmentRoutes');
 const recordRoutes = require('./routes/recordRoutes');
 const logRoutes = require('./routes/logRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
+const staffRoutes = require('./routes/staffRoutes');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/doctors', doctorRoutes);
+app.use('/api/staff', staffRoutes);
 app.use('/api/appointments', appointmentRoutes);
 app.use('/api/medical-records', recordRoutes);
 app.use('/api/logs', logRoutes);

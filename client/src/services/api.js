@@ -69,6 +69,15 @@ export const doctors = {
   delete: (id) => request(`/doctors/${id}`, { method: 'DELETE' }),
 };
 
+// Staff
+export const staff = {
+  getAll: () => request('/staff'),
+  getById: (id) => request(`/staff/${id}`),
+  create: (data) => request('/staff', { method: 'POST', body: JSON.stringify(data) }),
+  update: (id, data) => request(`/staff/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+  delete: (id) => request(`/staff/${id}`, { method: 'DELETE' }),
+};
+
 // Appointments
 export const appointments = {
   getAll: () => request('/appointments'),

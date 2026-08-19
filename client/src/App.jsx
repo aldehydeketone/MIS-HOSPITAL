@@ -18,6 +18,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 import AdminPatients from './pages/admin/Patients';
 import AdminPatientDetails from './pages/admin/PatientDetails';
 import AdminDoctors from './pages/admin/Doctors';
+import AdminStaff from './pages/admin/Staff';
 import AdminAppointments from './pages/admin/Appointments';
 import AccessControl from './pages/admin/AccessControl';
 import AuditLogs from './pages/admin/AuditLogs';
@@ -65,6 +66,7 @@ function App() {
           <Route path="/admin/patients" element={<AdminRoute><AdminPatients /></AdminRoute>} />
           <Route path="/admin/patients/:id" element={<AdminRoute><AdminPatientDetails /></AdminRoute>} />
           <Route path="/admin/doctors" element={<AdminRoute><AdminDoctors /></AdminRoute>} />
+          <Route path="/admin/staff" element={<AdminRoute><AdminStaff /></AdminRoute>} />
           <Route path="/admin/appointments" element={<AdminRoute><AdminAppointments /></AdminRoute>} />
           <Route path="/admin/access-control" element={<AdminRoute><AccessControl /></AdminRoute>} />
           <Route path="/admin/audit-logs" element={<AdminRoute><AuditLogs /></AdminRoute>} />

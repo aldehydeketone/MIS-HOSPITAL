@@ -18,6 +18,7 @@ export const navItems = {
     { label: 'Dashboard', href: '/admin/dashboard', icon: 'grid' },
     { label: 'Patients', href: '/admin/patients', icon: 'users' },
     { label: 'Doctors', href: '/admin/doctors', icon: 'stethoscope' },
+    { label: 'Staff', href: '/admin/staff', icon: 'users' },
     { label: 'Appointments', href: '/admin/appointments', icon: 'calendar' },
     { label: 'Access Control', href: '/admin/access-control', icon: 'shield' },
     { label: 'Audit Logs', href: '/admin/audit-logs', icon: 'file-text' },
